@@ -20,6 +20,7 @@
 		5B98EF13240606B000267313 /* Apollo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0A240606B000267313 /* Apollo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B98EF14240606B000267313 /* ApolloWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0B240606B000267313 /* ApolloWebSocket.framework */; };
 		5B98EF15240606B000267313 /* ApolloWebSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0B240606B000267313 /* ApolloWebSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B98EF19240608EA00267313 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98EF18240608EA00267313 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		5B98EF09240606B000267313 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		5B98EF0A240606B000267313 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
 		5B98EF0B240606B000267313 /* ApolloWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApolloWebSocket.framework; path = Carthage/Build/iOS/ApolloWebSocket.framework; sourceTree = "<group>"; };
+		5B98EF18240608EA00267313 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				5B98EEEF2406017A00267313 /* BookManagerClientWithGraphQL.h */,
 				5B98EEF02406017A00267313 /* Info.plist */,
+				5B98EF18240608EA00267313 /* APIClient.swift */,
 			);
 			path = BookManagerClientWithGraphQL;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				TargetAttributes = {
 					5B98EEEB2406017A00267313 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					5B98EEF42406017A00267313 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -274,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B98EF19240608EA00267313 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +424,7 @@
 		5B98EF012406017A00267313 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
@@ -439,6 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.IichiroKawashima.BookManagerClientWithGraphQL;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,6 +454,7 @@
 		5B98EF022406017A00267313 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
@@ -475,6 +483,7 @@
 		5B98EF042406017A00267313 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
 				INFOPLIST_FILE = BookManagerClientWithGraphQLTests/Info.plist;
@@ -493,6 +502,7 @@
 		5B98EF052406017A00267313 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
 				INFOPLIST_FILE = BookManagerClientWithGraphQLTests/Info.plist;
