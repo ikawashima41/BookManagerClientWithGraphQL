@@ -9,13 +9,15 @@
 import Foundation
 import Apollo
 
-final class APIClient {
-    static let shared = APIClient()
+final class GithubAPIClient {
+    static let shared = GithubAPIClient()
     private init() {}
 
     private lazy var networkTransport: HTTPNetworkTransport = {
-        /// Replace baseurl
-        let transport = HTTPNetworkTransport(url: URL(string: "http://localhost:8080/graphql")!)
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(Constants.githubToken)"]
+
+        let transport = HTTPNetworkTransport(url: Constants.baseURL, configration: configuration)
         transport.delegate = self
         return transport
     }()
@@ -24,7 +26,7 @@ final class APIClient {
 }
 
 /// MARK: - HTTPNetworkTransportPreflightDelegate
-extension APIClient: HTTPNetworkTransportPreflightDelegate {
+extension GithubAPIClient: HTTPNetworkTransportPreflightDelegate {
     func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
         /// Do something
         return true
@@ -36,7 +38,7 @@ extension APIClient: HTTPNetworkTransportPreflightDelegate {
 }
 
 /// MARK: - HTTPNetworkTransportTaskCompletedDelegate
-extension APIClient: HTTPNetworkTransportTaskCompletedDelegate {
+extension GithubAPIClient: HTTPNetworkTransportTaskCompletedDelegate {
     func networkTransport(_ networkTransport: HTTPNetworkTransport, didCompleteRawTaskForRequest request: URLRequest, withData data: Data?, response: URLResponse?, error: Error?) {
         /// Do something
     }
@@ -44,7 +46,7 @@ extension APIClient: HTTPNetworkTransportTaskCompletedDelegate {
 }
 
 /// MARK: - HTTPNetworkTransportRetryDelegate
-extension APIClient: HTTPNetworkTransportRetryDelegate {
+extension GithubAPIClient: HTTPNetworkTransportRetryDelegate {
     func networkTransport(_ networkTransport: HTTPNetworkTransport, receivedError error: Error, for request: URLRequest, response: URLResponse?, retryHandler: @escaping (Bool) -> Void) {
         // Do something
     }
