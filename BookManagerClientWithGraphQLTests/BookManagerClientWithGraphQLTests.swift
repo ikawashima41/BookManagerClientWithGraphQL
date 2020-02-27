@@ -11,6 +11,8 @@ import XCTest
 
 class BookManagerClientWithGraphQLTests: XCTestCase {
 
+    private let client = GithubAPIClient.shared
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,9 +21,23 @@ class BookManagerClientWithGraphQLTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGithubv4API() {
+
+        let exp = expectation(description: "Success")
+
+        client.fetchUserFromGithub { (result) in
+            switch result {
+            case .success(let res):
+                debugPrint(res!)
+                exp.fulfill()
+
+            case .failure(let err):
+                print(err.localizedDescription)
+                XCTAssertFalse(false)
+            }
+        }
+
+        wait(for: [exp], timeout: 30.0)
     }
 
     func testPerformanceExample() {

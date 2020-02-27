@@ -12,16 +12,8 @@
 		5B98EEF62406017A00267313 /* BookManagerClientWithGraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EEEC2406017A00267313 /* BookManagerClientWithGraphQL.framework */; };
 		5B98EEFB2406017A00267313 /* BookManagerClientWithGraphQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98EEFA2406017A00267313 /* BookManagerClientWithGraphQLTests.swift */; };
 		5B98EEFD2406017A00267313 /* BookManagerClientWithGraphQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B98EEEF2406017A00267313 /* BookManagerClientWithGraphQL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B98EF0C240606B000267313 /* ApolloSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF07240606B000267313 /* ApolloSQLite.framework */; };
-		5B98EF0D240606B000267313 /* ApolloSQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF07240606B000267313 /* ApolloSQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B98EF0E240606B000267313 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF08240606B000267313 /* SQLite.framework */; };
-		5B98EF0F240606B000267313 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF08240606B000267313 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B98EF10240606B000267313 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF09240606B000267313 /* Starscream.framework */; };
-		5B98EF11240606B000267313 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF09240606B000267313 /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B98EF12240606B000267313 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0A240606B000267313 /* Apollo.framework */; };
 		5B98EF13240606B000267313 /* Apollo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0A240606B000267313 /* Apollo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B98EF14240606B000267313 /* ApolloWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0B240606B000267313 /* ApolloWebSocket.framework */; };
-		5B98EF15240606B000267313 /* ApolloWebSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EF0B240606B000267313 /* ApolloWebSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B98EF19240608EA00267313 /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98EF18240608EA00267313 /* GithubAPIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B98EF0F240606B000267313 /* SQLite.framework in Embed Frameworks */,
-				5B98EF15240606B000267313 /* ApolloWebSocket.framework in Embed Frameworks */,
-				5B98EF11240606B000267313 /* Starscream.framework in Embed Frameworks */,
-				5B98EF0D240606B000267313 /* ApolloSQLite.framework in Embed Frameworks */,
 				5B98EF13240606B000267313 /* Apollo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -75,10 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B98EF0E240606B000267313 /* SQLite.framework in Frameworks */,
-				5B98EF14240606B000267313 /* ApolloWebSocket.framework in Frameworks */,
-				5B98EF10240606B000267313 /* Starscream.framework in Frameworks */,
-				5B98EF0C240606B000267313 /* ApolloSQLite.framework in Frameworks */,
 				5B98EF12240606B000267313 /* Apollo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,10 +266,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Apollo.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ApolloSQLite.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ApolloWebSocket.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
