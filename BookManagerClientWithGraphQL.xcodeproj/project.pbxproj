@@ -164,6 +164,7 @@
 				5B98EEEA2406017A00267313 /* Resources */,
 				5B98EF16240606B000267313 /* Embed Frameworks */,
 				5B98EF17240606BB00267313 /* Carthage */,
+				5B2D952124081F5B00557ADB /* Scheme Json */,
 			);
 			buildRules = (
 			);
@@ -248,6 +249,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5B2D952124081F5B00557ADB /* Scheme Json */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Scheme Json";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "apollo codegen:generate --queries=githubQuery.graphql --localSchemaFile=schema.json --target=swift API.swift\n";
+		};
 		5B98EF17240606BB00267313 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

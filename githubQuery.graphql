@@ -1,0 +1,9 @@
+query ShowViewer {
+  viewer {
+    id
+    name
+    email
+    avatarUrl
+    company
+  }
+}
