@@ -9,20 +9,42 @@
 import Foundation
 import Apollo
 
+protocol GithubAPIClientProtocol {
+    associatedtype T
+    var apollo: ApolloClient { get }
+    func fetchUserFromGithub(completion: (Result<T, Error>))
+}
+
 final class GithubAPIClient {
     static let shared = GithubAPIClient()
     private init() {}
 
-    private lazy var networkTransport: HTTPNetworkTransport = {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = ["Authorization": "Bearer \(Constants.githubToken)"]
+    typealias Entity = Githubv4API.ShowViewerQuery.Data?
 
-        let transport = HTTPNetworkTransport(url: Constants.baseURL, configration: configuration)
+    private lazy var networkTransport: HTTPNetworkTransport = {
+        let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = ["Authorization": "Bearer \(Constants.githubToken)"]
+        let session = URLSession(configuration: config)
+
+        let transport = HTTPNetworkTransport(url: Constants.baseURL, session: session)
         transport.delegate = self
         return transport
     }()
 
     private(set) lazy var apollo = ApolloClient(networkTransport: self.networkTransport)
+}
+
+extension GithubAPIClient {
+    func fetchUserFromGithub(completion: @escaping (Result<Entity, Error>) -> Void) {
+        GithubAPIClient.shared.apollo.fetch(query: Githubv4API.ShowViewerQuery()) { results in
+            switch results {
+            case .success(let result):
+              completion(.success(result.data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 /// MARK: - HTTPNetworkTransportPreflightDelegate

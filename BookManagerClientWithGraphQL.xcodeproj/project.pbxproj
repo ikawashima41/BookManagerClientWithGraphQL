@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B2D95232408225600557ADB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D95222408225600557ADB /* Constants.swift */; };
+		5B2D95272408257700557ADB /* Githubv4API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D95262408257700557ADB /* Githubv4API.swift */; };
 		5B98EEF62406017A00267313 /* BookManagerClientWithGraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B98EEEC2406017A00267313 /* BookManagerClientWithGraphQL.framework */; };
 		5B98EEFB2406017A00267313 /* BookManagerClientWithGraphQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98EEFA2406017A00267313 /* BookManagerClientWithGraphQLTests.swift */; };
 		5B98EEFD2406017A00267313 /* BookManagerClientWithGraphQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B98EEEF2406017A00267313 /* BookManagerClientWithGraphQL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		5B2D95222408225600557ADB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B2D95262408257700557ADB /* Githubv4API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Githubv4API.swift; sourceTree = SOURCE_ROOT; };
 		5B98EEEC2406017A00267313 /* BookManagerClientWithGraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BookManagerClientWithGraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B98EEEF2406017A00267313 /* BookManagerClientWithGraphQL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookManagerClientWithGraphQL.h; sourceTree = "<group>"; };
 		5B98EEF02406017A00267313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				5B98EEF02406017A00267313 /* Info.plist */,
 				5B98EF18240608EA00267313 /* GithubAPIClient.swift */,
 				5B2D95222408225600557ADB /* Constants.swift */,
+				5B2D95262408257700557ADB /* Githubv4API.swift */,
 			);
 			path = BookManagerClientWithGraphQL;
 			sourceTree = "<group>";
@@ -268,7 +271,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "apollo codegen:generate --queries=githubQuery.graphql --localSchemaFile=schema.json --target=swift API.swift\n";
+			shellScript = "apollo codegen:generate --queries=githubQuery.graphql --localSchemaFile=schema.json --target=swift Githubv4API.swift --namespace=Githubv4API\n";
 		};
 		5B98EF17240606BB00267313 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -302,6 +305,7 @@
 			files = (
 				5B2D95232408225600557ADB /* Constants.swift in Sources */,
 				5B98EF19240608EA00267313 /* GithubAPIClient.swift in Sources */,
+				5B2D95272408257700557ADB /* Githubv4API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
